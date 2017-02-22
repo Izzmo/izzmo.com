@@ -5,7 +5,10 @@
   "private": true,
   "main": "start.js",
   "scripts": {
-    "start": "node --use_strict start.js"
+    "prebuild": "tslint static/ts/*.ts",
+    "build": "tsc -p static/ts",
+    "start": "node --use_strict start.js",
+    "test": "ava"
   },
   "author": "Nick George <me@izzmo.com>",
   "license": "MIT",
@@ -13,5 +16,8 @@
   "dependencies": {
     "tslint": "^4.4.2",
     "typescript": "^2.1.6"
+  },
+  "devDependencies": {
+    "ava": "^0.18.2"
   }
 }
